@@ -1,22 +1,27 @@
 import express from "express";
+import morgan from "morgan";
 
-const PORT = 8005;
+const PORT = 8450;
+
 const app = express();
+const logger = morgan("dev");
+app.use(logger);
 
-// middle
-const logger = (req, res, next) => {
-    console.log(`${req.method} ${req.url}`);
-    console.log(`${req.path}`);
-    // 다음으로 넘어감
-    next();
-  };
+const globalRouter = express.Router();
+const handleHome = (req, res) => res.send("Home");
+globalRouter.get("/", handleHome);
 
-// final
-const handleHome = (req, res) => {
-    return res.send("middlewares");
-};
+const userRouter = express.Router();
+const handleEditUser = (req, res) => res.send("Edit User");
+userRouter.get("/edit", handleEditUser);
 
-app.get("/", logger, handleHome);
+const videoRouter = express.Router();
+const handleWatchVideo = (req, res) => res.send("Watch Video");
+videoRouter.get("/watch", handleWatchVideo);
+
+app.use("/", globalRouter);
+app.use("/users", userRouter);
+app.use("/videos", videoRouter);
 
 const handleListening = () => console.log(`Run server on port:${PORT}`);
 app.listen(PORT, handleListening);
