@@ -1,5 +1,16 @@
 export const trending = (req, res) => {
-    return res.render("home", {pageTitle:"Home"});
+    const videos = [
+        {
+          title: "Hello",
+        },
+        {
+          title: "Video #2",
+        },
+        {
+          title: "Whatsup",
+        },
+      ];
+      return res.render("home", { pageTitle: "Home", videos });
 }
 export const see = (req, res) => {
     return res.render("watch",{pageTitle:"Watch"});
