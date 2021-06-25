@@ -21,27 +21,27 @@ nodejs youtube 클론코딩
 
 ## Router
 
-* Root
+#### Root
 
-| Router | Name |
+| Router | Info |
 |----|----|
 | / | Home |
 | /join| Join |
 | /login | Login
 | /search | Search |
 
-* User
+#### User
 
-| Router | Name |
+| Router | Info |
 |----|----|
 | /users/:id | See User |
 | /users/logout | Log Out |
 | /users/edit | Edit MY Profile |
 | /users/delete | Delete MY Profile |
 
-* Video
+#### Video
 
-| Router | Name |
+| Router | Info |
 |----|----|
 | /videos/:id | See Video |
 | /videos/:id/edit | Edit Video |
