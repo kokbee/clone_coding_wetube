@@ -1,26 +1,46 @@
 # clone_coding_wetube
-nodejs 클론코딩
+nodejs youtube 클론코딩
+
+## Code
+- Node.js 12 ~ 14
+
+## Database
+- MongoDB 4.4
 
 ## Requirements
-- node.js 14.17.0
 - express
-- javascript
+- bcrypt 5.0.1
+- connect-mongo 4.4.1
+- dotenv 10.0.0
+- express 4.17.1
+- express-session 1.17.2 
+- mongoose 5.12.13
+- morgan 1.10.0
+- node-fetch 2.6.1
+- pug 3.0.2
 
 ## Router
-/ -> Home
-/join -> Join
-/login -> Login
-/search -> Search
 
-/users/:id -> See User
-/users/logout -> Log Out
-/users/edit -> Edit MY Profile
-/users/delete -> Delete MY Profile
+* Root
+| Router | Name |
+| / | Home |
+| /join| Join |
+| /login | Login
+| /search | Search |
 
-/videos/:id -> See Video
-/videos/:id/edit -> Edit Video
-/videos/:id/delete -> Delete Video
-/videos/upload -> Upload Video
+* User
+| /users/:id | See User |
+| /users/logout | Log Out |
+| /users/edit | Edit MY Profile |
+| /users/delete | Delete MY Profile |
+
+* Video
+| /videos/:id | See Video |
+| /videos/:id/edit | Edit Video |
+| /videos/:id/delete | Delete Video |
+| /videos/upload | Upload Video |
+
+## Days
 
 |날짜|내용|
 |----|----|
@@ -33,3 +53,5 @@ nodejs 클론코딩
 |21.06.16| Session|
 |21.06.17| MongoStore |
 |21.06.19| Github Login Setting|
+|21.06.24| Post Github Login|
+|21.06.25| Edit Profile Get|
