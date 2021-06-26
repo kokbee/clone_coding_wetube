@@ -63,3 +63,4 @@ nodejs youtube 클론코딩
 |21.06.19| Github Login Setting|
 |21.06.24| Post Github Login|
 |21.06.25| Edit Profile Get|
+|21.06.26| Edit Profile Post|

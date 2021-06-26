@@ -154,8 +154,22 @@ export const getEdit = (req, res) => {
   return res.render("edit-profile", {pageTitle: "Eidt Profile"})
 };
 
-export const postEdit = (req, res) => {
-  return res.render("edit-profile", {pageTitle: "Eidt Profile"})
+export const postEdit = async (req, res) => {
+  const {
+    session: {
+      user: {_id},
+    },
+    body: {name, email, username, location},
+  } = req;
+  // new: true 시 바뀐 몽고디비에서 데이터를 반환해줌
+  const updatedUser = await User.findByIdAndUpdate(_id, {
+    name,
+    email,
+    username,
+    location,
+  },{new: true});
+  req.session.user = updatedUser;
+  return res.redirect("/users/edit")
 };
 
 export const edit = (req, res) => res.send("Edit User");
